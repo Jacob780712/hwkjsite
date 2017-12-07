@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <!-- BASICS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>3DNest、3D技術で新たな空間へ</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="jia">
+    <meta name="copyright" content="">
+    <meta name="date" content="2016">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- skin -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css"/>
+    <link rel="shortcut icon" href="img/lbttlogo.png">
+    <style>
+        .cd-vertical-nav li:first-of-type a::after {
+            /* change icon using image sprites */
+            /*background-position: 0px -48px;*/
+            content: "\f015";
+            color: black;
+            font-size: 16px;
+            top: 4px;
+            font-family: FontAwesome;
+            /* fix bug with transitions - set scale(0.01) rather than scale(0) */
+            -webkit-transform: translateX(-50%) translateY(4.5em) scale(0.01);
+            -moz-transform: translateX(-50%) translateY(4.5em) scale(0.01);
+            -ms-transform: translateX(-50%) translateY(4.5em) scale(0.01);
+            -o-transform: translateX(-50%) translateY(4.5em) scale(0.01);
+            transform: translateX(-50%) translateY(4.5em) scale(0.01);
+        }
+
+        .cd-vertical-nav li:nth-of-type(2) a::after {
+            /*background-position: 0px -32px;*/
+            content: "\f095";
+            color: black;
+            font-size: 16px;
+            top: 4px;
+            font-family: FontAwesome;
+            -webkit-transform: translateX(-50%) translateY(1.5em) scale(0.01);
+            -moz-transform: translateX(-50%) translateY(1.5em) scale(0.01);
+            -ms-transform: translateX(-50%) translateY(1.5em) scale(0.01);
+            -o-transform: translateX(-50%) translateY(1.5em) scale(0.01);
+            transform: translateX(-50%) translateY(1.5em) scale(0.01);
+        }
+
+        .cd-vertical-nav li:nth-of-type(3) a::after {
+            /*background-position: 0px -16px;*/
+            content: "\f0c0";
+            color: black;
+            font-size: 16px;
+            top: 4px;
+            font-family: FontAwesome;
+            -webkit-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+            -moz-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+            -ms-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+            -o-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+            transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+        }
+
+        .cd-vertical-nav li:nth-of-type(4) a::after {
+            /*background-position: 0px 0px;*/
+            content: "\f278";
+            color: black;
+            font-size: 16px;
+            top: 4px;
+            font-family: FontAwesome;
+            -webkit-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+            -moz-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+            -ms-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+            -o-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+            transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+        }
+    </style>
+</head>
+<body>
+<div id='wx_pic' style='margin:0 auto;display:none;'>
+    <img src='img/weixin.png'/>
+</div>
+<nav class="cd-vertical-nav">
+    <ul>
+        <li><a href="#section-cantacthome" class="active smooth"><span class="label">ホーム</span></a></li>
+        <li><a href="#section-contact" class="smooth"><span class="label">料金</span></a></li>
+        <li><a href="#section-join" class="smooth"><span class="label">手順</span></a></li>
+        <li><a href="#section-map" class="smooth"><span class="label">お問い合わせ</span></a></li>
+    </ul>
+</nav>
+<div class="navbar navbar-fixed-top" role="navigation"
+     data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0);"
+     data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="fa fa-bars color-white"></span>
+            </button>
+            <h1><a class="navbar-brand" href="indexjp.html" data-0="line-height:90px;"
+                   data-300="line-height:50px;"><img src="img/lbttlogojp.png" alt="" style="display: inline;width: 240px;"></a></h1>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+                <li><a class="smooth" href="indexjp.html">ホーム</a></li>
+                <li><a class="smooth" href="qsjqjjp.html">機能説明</a></li>
+                <li><a class="smooth" href="aboutjp.html">会社概要</a></li>
+                <li class="active"><a class="smooth" href="#">お問い合わせ</a></li>
+                <li><a class="smooth" href="index.html">中国語</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<section id="section-cantacthome" class="appear cantacthome" data-stellar-background-ratio="0">
+    <div class="container-fluid">
+        <div class="row home-top">
+            <div class="col-md-12">
+                <img src="img/logowordjp.png"
+                     class="animation203 animated fadeInDown img-responsive center-block">
+                <br>
+                <br>
+                <br>
+                <img src="img/t2jp.png" class="animation203 animated fadeInUp img-responsive center-block">
+            </div>
+        </div>
+    </div>
+    <div id="mice">
+        <a href="#section-contact" class="smooth">
+            <div>
+                <span class="unu"></span>
+                <span class="doi"></span>
+            </div>
+        </a>
+    </div>
+</section>
+<!--product-->
+<section id="section-product" class="appear section clearfix">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 align-center">
+                <p class="section-header notransition animated fadeInDownNow animation103">料金</p>
+            </div>
+        </div>
+        <div class="row pad-bot40 pad-top40">
+
+            <div class="mainp col-md-6 align-left notransition animated fadeInLeftBigNow animation103">
+                <h3 class="align-center">手軽な価格で高品質な360°3D-VRコンテンツを手に入れる</h3>
+                <p style="font-size: 14px; margin:2px;">※　80㎡を越える場合は、20㎡超過毎に　コンテンツ作成費：10,000円　月額管理費：200円　の追加費用が発生します</p>
+                <p style="font-size: 14px; margin:2px;">※　交通費：天王洲アイル駅からの最速ルートでの実費交通費をご負担頂きます。</p>
+                <p style="font-size: 14px; margin:2px;">※　出張費：天王洲アイル駅から片道60分を越える場合は別途出張費用が発生します。（5,000円/時間）</p>
+                <p style="font-size: 14px; margin:2px;">※　撮影場所から鍵受取場所までが片道15分を超える場合、別途費用が発生します。（3,000円～）</p>
+                <p style="font-size: 14px; margin:2px;">※　画像および動画をコンテンツ埋込する場合、URLでのご提供が前提となります。</p>
+                <p style="font-size: 14px; margin:2px;">※　画像および動画をコンテンツ埋込する場合、URLでのご提供が前提となります。</p>
+                <p style="font-size: 14px; margin:2px;">（任意のサーバーURLもしくは、画像の場合Instagram・Flickr、動画の場合Youtube・Vimeo）</p>
+                <p style="font-size: 14px; margin:2px;">※　大規模物件については、時間制料金プランもご用意しています。詳細はお問い合せ下さい。</p>
+            </div>
+            <div class="col-md-6 notransition animated fadeInRightNow animation203" >
+                <img src="img/pricejp.png" class="img-responsive center-block">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- case -->
+<section id="section-join" class="appear section" data-stellar-background-ratio="0.4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 pad-top40 pad-bot40">
+                <img src="img/t1jp.png"
+                     class="img-responsive center-block notransition animated fadeInUpNow animation103">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section clearfix ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 align-center">
+                <p class="section-subheader notransition animated fadeInDownNow animation103">お申込後は発行されたURLをサイトに掲載するだけ</p>
+            </div>
+        </div>
+        <div class="row mar-top40 notransition animated fadeInUpNow animation103">
+            <div class="col-md-2 col-sm-2" >
+                <div class="vrbox" style="border: 0px">
+                    <div class="vrone"
+                         data-toggle="tooltip" data-placement="top" data-html="true">
+                        <img src="img/step1jp.png" alt="" class="backimg img-responsive"/>
+                        <!--<a href="#" target="_blank">-->
+                            <!--<div class="qrcode" style="background: url('img/qr/dcxl.png') center no-repeat;">-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    </div>
+                    <div class="vrtext">
+                        <span style="width: 100%; text-align: center; font: bold 20px Verdana, Arial, Helvetica, sans-serif; color: #EA8511;">STEP 1</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2" >
+                <div class="vrbox" style="border: 0px">
+                    <div class="vrone"
+                         data-toggle="tooltip" data-placement="top" data-html="true">
+                        <img src="img/step2jp.png" alt="" class="backimg img-responsive"/>
+                        <!--<a href="#" target="_blank">-->
+                        <!--<div class="qrcode" style="background: url('img/qr/dcxl.png') center no-repeat;">-->
+                        <!--</div>-->
+                        <!--</a>-->
+                    </div>
+                    <div class="vrtext">
+                        <span style="width: 100%; text-align: center; font: bold 20px Verdana, Arial, Helvetica, sans-serif; color: #EA8511;">STEP 2</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2" >
+                <div class="vrbox" style="border: 0px">
+                    <div class="vrone"
+                         data-toggle="tooltip" data-placement="top" data-html="true">
+                        <img src="img/step3jp.png" alt="" class="backimg img-responsive"/>
+                        <!--<a href="#" target="_blank">-->
+                        <!--<div class="qrcode" style="background: url('img/qr/dcxl.png') center no-repeat;">-->
+                        <!--</div>-->
+                        <!--</a>-->
+                    </div>
+                    <div class="vrtext">
+                        <span style="width: 100%; text-align: center; font: bold 20px Verdana, Arial, Helvetica, sans-serif; color: #EA8511;">STEP 3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2" >
+                <div class="vrbox" style="border: 0px">
+                    <div class="vrone"
+                         data-toggle="tooltip" data-placement="top" data-html="true">
+                        <img src="img/step4jp.png" alt="" class="backimg img-responsive"/>
+                        <!--<a href="#" target="_blank">-->
+                        <!--<div class="qrcode" style="background: url('img/qr/dcxl.png') center no-repeat;">-->
+                        <!--</div>-->
+                        <!--</a>-->
+                    </div>
+                    <div class="vrtext">
+                        <span style="width: 100%; text-align: center; font: bold 20px Verdana, Arial, Helvetica, sans-serif; color: #EA8511;">STEP 4</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2" >
+                <div class="vrbox" style="border: 0px">
+                    <div class="vrone"
+                         data-toggle="tooltip" data-placement="top" data-html="true">
+                        <img src="img/step5jp.png" alt="" class="backimg img-responsive"/>
+                        <!--<a href="#" target="_blank">-->
+                        <!--<div class="qrcode" style="background: url('img/qr/dcxl.png') center no-repeat;">-->
+                        <!--</div>-->
+                        <!--</a>-->
+                    </div>
+                    <div class="vrtext">
+                        <span style="width: 100%; text-align: center; font: bold 20px Verdana, Arial, Helvetica, sans-serif; color: #EA8511;">STEP 5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mar-top40">
+            <div class="col-md-6  align-center">
+                <p>下部のお問合わせフォームよりお申し込みいただくと、弊社にて内容を確認後、撮影内容の詳細のヒアリングをさせていただきます。お見積金額をご提示後、金額に納得いただけましたら、撮影日程の調整を行います。</p>
+            </div>
+            <div class="col-md-6 align-center">
+                <p>弊社より現地に撮影にお伺いします。撮影後、社内で編集作業を行います。
+                    編集が完了したら、URLを発行しますので、貴社はサイト内に自由に組み込んでいただくだけで利用可能です。</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- case -->
+<section id="section-video" class="section appear" data-stellar-background-ratio="0.4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 pad-top40 pad-bot40">
+                <img src="img/t1jp.png"
+                     class="img-responsive center-block notransition animated fadeInUpNow animation103">
+            </div>
+        </div>
+    </div>
+</section>
+<!--contactus-->
+<section id="section-contact" class="appear section clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 align-center">
+                <p class="section-header notransition animated fadeInDownNow animation103">お問い合わせフォーム</p>
+                <p class="section-context notransition animated fadeInUpNow animation103">3D技術で新たな空間にご興味をお持ちの方は以下のフォームよりお問い合わせください。</p>
+                <p class="section-context notransition animated fadeInUpNow animation103">折り返し詳細のご説明・要件のヒアリングをさせていただきます。</p>
+                <br/>
+                <span><label><input type="radio" name="your-reason" value="お問い合わせ" checked="checked"><span>お問い合わせ</span></label></span>
+                &nbsp;&nbsp;&nbsp;&nbsp; <span><label><input type="radio" name="your-reason" value="お申し込み"><span>お申し込み</span></label></span>
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <div class="cform" id="contact-form">
+        <div class="row notransition animated fadeInUpNow animation103">
+            <div class="col-md-6 ">
+                    <form action="contact/contact.php" method="post" role="form" class="contactForm">
+                        <div class="form-group">
+                            <label for="name">基本情報</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">会社名※必須</label>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="会社名"
+                                   data-rule="required" data-msg="会社名"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">部署名</label>
+                            <input type="text" name="name" class="form-control" id="bushuming" placeholder="部署名"
+                                   data-rule="required" data-msg="部署名"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">氏名※必須</label>
+                            <input type="text" name="name" class="form-control" id="xingshi" placeholder="氏名"
+                                   data-rule="required" data-msg="氏名"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">メールアドレス※必須</label>
+                            <input type="text" name="name" class="form-control" id="mail" placeholder="メールアドレス"
+                                   data-rule="required" data-msg="メールアドレス"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">電話番号※必須</label>
+                            <input type="text" name="name" class="form-control" id="tel" placeholder="電話番号"
+                                   data-rule="required" data-msg="電話番号"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">会社所在地（都道府県）※必須</label>
+                            <input type="text" name="name" class="form-control" id="address1" placeholder="会社所在地（都道府県）"
+                                   data-rule="required" data-msg="会社所在地（都道府県）"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">会社所在地（市区町村以下）※必須</label>
+                            <input type="text" name="name" class="form-control" id="address2" placeholder="会社所在地（市区町村以下）"
+                                   data-rule="required" data-msg="会社所在地（市区町村以下）"/>
+                            <div class="validation"></div>
+                        </div>
+            </div>
+            <div class="col-md-6 ">
+                    <!--<form action="contact/contact.php" method="post" role="form" class="contactForm">-->
+                        <div class="form-group">
+                            <label >撮影内容</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">物件種類</label>
+                            <input type="text" name="name" class="form-control" id="zhonglei" placeholder="物件種類"
+                                   data-rule="required" data-msg="（記入例 ： マンション・ホテル・飲食店・結婚式場 など）"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">撮影所在地</label>
+                            <input type="text" name="name" class="form-control" id="address3" placeholder="撮影所在地"
+                                   data-rule="required" data-msg="（撮影場所の住所をご記入下さい）"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">撮影面積</label>
+                            <input type="text" name="name" class="form-control" id="mianji" placeholder="撮影面積"
+                                   data-rule="required" data-msg="（記入例 ： 85㎡）"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">希望撮影日（第一希望）</label>
+                            <input type="text" name="name" class="form-control" id="date1" placeholder="（記入例 ： 2017/8/10　15:00-17:00）"
+                                   data-rule="required" data-msg="（記入例 ： 2017/8/10　15:00-17:00）"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">希望撮影日（第二希望）</label>
+                            <input type="text" name="name" class="form-control" id="date2" placeholder="（記入例 ： 2017/8/10　15:00-17:00）"
+                                   data-rule="required" data-msg="（記入例 ： 2017/8/10　15:00-17:00）"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">希望撮影日（第三希望）</label>
+                            <input type="text" name="name" class="form-control" id="date3" placeholder="（記入例 ： 2017/8/10　15:00-17:00）"
+                                   data-rule="required" data-msg="（記入例 ： 2017/8/10　15:00-17:00）"/>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">希望納品日</label>
+                            <input type="text" name="name" class="form-control" id="date4" placeholder="（記入例 ： 8月中）"
+                                   data-rule="required" data-msg="（記入例 ： 8月中）"/>
+                            <div class="validation"></div>
+                        </div>
+
+                    <div id="sendmessage">
+                    我们已经接收到你的留言，会尽快联系您. 谢谢!
+                    </div>
+
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="message">その他</label>
+                    <textarea id="message" class="form-control" name="message" rows="5"></textarea>
+                    <div class="validation"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 align-center ">
+                <button type="submit" class="btn btn-theme pull-center" id="sendbtn">撮影相談する</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</section>
+<!-- map -->
+<!--<section id="section-map" class="appear clearfix notransition animated fadeInUpNow animation103">
+    <div id="map"></div>
+</section>-->
+<section id="footer" class="section  footer ">
+    <div class="container pad-bot40">
+        <div class="row mar-bot20">
+            <div class="col-sm-12 align-center">
+                <ul class="social-network social-circle">
+                    <li><a href="#" target="_blank" class="icotaobao" title="vrhuanwei@163.com"
+                           data-toggle="tooltip" data-placement="bottom">
+                        <div style="line-height: 50px"><img src="img/email.png"></div>
+                    </a></li>
+                    <li><a tabindex="0" class="icoweixin" role="button" data-toggle="popover" data-trigger="hover"
+                           data-html="true" data-placement="bottom" data-content="<img src='img/wxewm.png'>"><i
+                            class="fa fa-weixin"></i></a></li>
+                    <li><a href="#" class="icovr" title="HTML5" data-toggle="tooltip" data-placement="bottom"><i
+                            class="fa fa-html5"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row align-center copyright">
+            <div class="col-sm-12">
+                <p>
+                    <small><i class="fa fa-building-o"></i>&nbsp;&nbsp;〒305－0005 茨城県つくば市天久保２－１６－８</small>
+                </p>
+                <h4><strong><a href="tel:029-893-4581" target="_blank" style="letter-spacing: 6px;">
+                    <i class="fa fa-phone"></i>&nbsp;029-893-4581</a>
+                </strong>
+                </h4>
+                <p>Copyright (C) 2017 3DNest Japan Corporation. All Rights Reserved.</p>
+                <!--<p>-->
+                <!--<small><a href="#" target="_blank" class="color-footer"><i class="fa fa-shield"></i>&nbsp;&nbsp;辽ICP备15041818号</a></small>-->
+                <!--</p>-->
+            </div>
+        </div>
+    </div>
+</section>
+<script src="js/modernizr.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/skrollr.min.js"></script>
+<script src="js/stellar.js"></script>
+<script src="js/jquery.appear.js"></script>
+<script src="js/validate.js"></script>
+<script src="js/jweixin-1.0.0.js"></script>
+<script src="js/main.js"></script>
+<!--引用百度地图API-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=2K7XK7x59AbzjS8E4MaDt8FY"></script>
+<script type="text/javascript"
+        src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+<script src="js/map.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b97983f375a0aaf713b0ec5ca6cc97d0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>
